@@ -4,39 +4,42 @@ Este projeto implementa uma versão simplificada do Twitter, desenvolvida exclus
 
 O Mini Twitter oferece as funcionalidades essenciais para:
 
-Registo e Login: Criar uma conta e aceder à aplicação.
+-Registo e Login: Criar uma conta e aceder à aplicação.
 
-Interação com Postagens: Criar novas postagens e visualizar um feed de todas as postagens existentes.
+-Interação com Postagens: Criar novas postagens e visualizar um feed de todas as postagens existentes.
 
-Gestão de Perfil: Visualizar e editar as informações do seu próprio perfil.
+-Gestão de Perfil: Visualizar e editar as informações do seu próprio perfil.
 
-A aplicação interage com uma API externa para persistir e recuperar os dados, garantindo uma experiência dinâmica e em tempo real.
+-A aplicação interage com uma API externa para persistir e recuperar os dados, garantindo uma experiência dinâmica e em tempo real.
 
 ## 🔗 API do Projeto
 A aplicação estabelece comunicação com a seguinte API RESTful:
 https://mini-twitter-api-vy9q.onrender.com/
 
 Endpoints Principais (Resumo)
-Autenticação
-POST /api/auth/register: Regista um novo utilizador.
+1. Autenticação
 
-POST /api/auth/login: Realiza o login do utilizador.
+-POST /api/auth/register: Regista um novo utilizador.
 
-Postagens
-POST /api/posts: Cria uma nova postagem.
+-POST /api/auth/login: Realiza o login do utilizador.
 
-GET /api/posts: Lista todas as postagens.
+2. Postagens
 
-GET /api/posts/my-posts: Lista as postagens do utilizador autenticado.
+-POST /api/posts: Cria uma nova postagem.
 
-DELETE /api/posts/:id: Deleta uma postagem específica (apenas pelo autor).
+-GET /api/posts: Lista todas as postagens.
 
-Utilizadores
-GET /api/users/profile: Retorna o perfil do utilizador autenticado.
+-GET /api/posts/my-posts: Lista as postagens do utilizador autenticado.
 
-PUT /api/users/profile: Atualiza o perfil do utilizador.
+-DELETE /api/posts/:id: Deleta uma postagem específica (apenas pelo autor).
 
-Atenção: Para aceder a endpoints protegidos, é necessário incluir o token JWT no cabeçalho da requisição: Authorization: Bearer <seu_token_jwt>.
+3. Utilizadores
+
+-GET /api/users/profile: Retorna o perfil do utilizador autenticado.
+
+-PUT /api/users/profile: Atualiza o perfil do utilizador.
+
+-Atenção: Para aceder a endpoints protegidos, é necessário incluir o token JWT no cabeçalho da requisição: Authorization: Bearer <seu_token_jwt>.
 
 ## ✨ Funcionalidades Implementadas
 1. Sistema de Utilizadores
@@ -95,14 +98,22 @@ Front-end:
 
 ## 📂 Estrutura do Projeto
 mini-twitter/
+
 │
 ├── index.html
+
 ├── style.css
+
 ├── appController.js # Controla a navegação, formulários e eventos principais
+
 ├── authRepository.js # Lida com login e cadastro (requisições para API)
+
 ├── userRepository.js # Lida com perfil do usuário
+
 ├── postRepository.js # Lida com postagens (get, create)
+
 ├── view.js # Lida com exibição de views e posts
+
 └── README.md
 
 ## 🚀 Como Executar o Projeto
