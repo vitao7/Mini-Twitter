@@ -43,6 +43,7 @@ Endpoints Principais (Resumo)
 
 ## ✨ Funcionalidades Implementadas
 1. Sistema de Utilizadores
+
 Criar Conta:
 
 -Formulário intuitivo para registo de novos utilizadores.
