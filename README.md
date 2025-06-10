@@ -1,81 +1,139 @@
 Mini Twitter - Projeto de Desenvolvimento Web
-Este é um projeto de desenvolvimento web que implementa uma versão simplificada do Twitter, utilizando apenas tecnologias web vanilla: HTML, CSS e JavaScript. O objetivo principal é criar uma aplicação front-end funcional que permita aos utilizadores interagir através de postagens curtas, de forma semelhante à popular rede social.
+🚀 Descrição do Projeto
+Este projeto implementa uma versão simplificada do Twitter, desenvolvida exclusivamente com HTML, CSS e JavaScript vanilla. O principal objetivo é criar uma aplicação front-end funcional que permita aos utilizadores interagir através de postagens curtas, replicando a essência da popular rede social.
 
---Descrição do Projeto
-O Mini Twitter oferece as funcionalidades essenciais para que os utilizadores possam registar-se, fazer login, criar e visualizar postagens num feed, e gerir o seu próprio perfil. A aplicação interage com uma API externa para persistir e recuperar os dados, garantindo uma experiência dinâmica.
+O Mini Twitter oferece as funcionalidades essenciais para:
 
---API do Projeto
-A aplicação interage com a seguinte API RESTful:
+Registo e Login: Criar uma conta e aceder à aplicação.
+
+Interação com Postagens: Criar novas postagens e visualizar um feed de todas as postagens existentes.
+
+Gestão de Perfil: Visualizar e editar as informações do seu próprio perfil.
+
+A aplicação interage com uma API externa para persistir e recuperar os dados, garantindo uma experiência dinâmica e em tempo real.
+
+🔗 API do Projeto
+A aplicação estabelece comunicação com a seguinte API RESTful:
 https://mini-twitter-api-vy9q.onrender.com/
 
---Endpoints Principais (Sumário)
-Autenticação:
+Endpoints Principais (Resumo)
+Autenticação
 POST /api/auth/register: Regista um novo utilizador.
+
 POST /api/auth/login: Realiza o login do utilizador.
 
-Postagens:
+Postagens
 POST /api/posts: Cria uma nova postagem.
+
 GET /api/posts: Lista todas as postagens.
+
 GET /api/posts/my-posts: Lista as postagens do utilizador autenticado.
+
 DELETE /api/posts/:id: Deleta uma postagem específica (apenas pelo autor).
 
-Utilizadores:
+Utilizadores
 GET /api/users/profile: Retorna o perfil do utilizador autenticado.
+
 PUT /api/users/profile: Atualiza o perfil do utilizador.
-Autenticação: Para aceder a endpoints protegidos, é necessário incluir o token JWT no cabeçalho da requisição: Authorization: Bearer <seu_token_jwt>.
 
---Funcionalidades Implementadas
-Sistema de Utilizadores:
-Criar Conta: Formulário para registo de novos utilizadores com nome de utilizador, email e senha.
-Login: Formulário de login com email e senha, mantendo o utilizador autenticado após o recarregamento da página (usando localStorage).
+Atenção: Para aceder a endpoints protegidos, é necessário incluir o token JWT no cabeçalho da requisição: Authorization: Bearer <seu_token_jwt>.
 
-Feed de Postagens:
-Criar Postagem: Campo de texto com limite de 280 caracteres e botão para publicar.
-Visualizar Postagens: Exibição de um feed com todas as postagens, incluindo nome de utilizador do autor, conteúdo e data/hora de publicação, ordenadas cronologicamente (mais recentes primeiro).
+✨ Funcionalidades Implementadas
+1. Sistema de Utilizadores
+Criar Conta:
 
-Perfil do Utilizador:
-Visualizar Perfil: Exibe as informações básicas do utilizador (nome de utilizador, email).
-Minhas Postagens: Lista todas as postagens criadas pelo utilizador.
-Editar Perfil: Opção para atualizar o nome de utilizador e o email do perfil.
+Formulário intuitivo para registo de novos utilizadores.
 
---Requisitos Técnicos
+Campos: Nome de utilizador, email e senha.
+
+Login:
+
+Formulário de login com email e senha.
+
+Manutenção do utilizador logado após o recarregamento da página (utilizando localStorage).
+
+2. Feed de Postagens
+Criar Postagem:
+
+Campo de texto para novas publicações com limite de 280 caracteres.
+
+Botão dedicado para publicar a postagem.
+
+Visualizar Postagens:
+
+Exibição de um feed completo com todas as postagens.
+
+Cada postagem exibe o nome de utilizador do autor, o conteúdo e a data/hora da publicação.
+
+As postagens são ordenadas cronologicamente, com as mais recentes a aparecerem primeiro.
+
+3. Perfil do Utilizador
+Visualizar Perfil:
+
+Exibe informações básicas do utilizador (nome de utilizador, email).
+
+Minhas Postagens:
+
+Lista dedicada a todas as postagens criadas pelo utilizador logado.
+
+Editar Perfil:
+
+Opção para atualizar o nome de utilizador e o email do perfil.
+
+🛠️ Requisitos Técnicos
 Front-end:
-HTML5 semântico.
-CSS3 (utilizando Flexbox para layout responsivo).
-JavaScript vanilla (ES6+ para módulos e assincronia).
-Design responsivo (mobile-first).
-Armazenamento local (localStorage) para persistência do token de autenticação.
 
---Estrutura do Projeto
+HTML5 Semântico: Estrutura clara e acessível do documento.
+
+CSS3: Estilização moderna e responsiva, com uso de Flexbox para layouts adaptáveis.
+
+JavaScript Vanilla (ES6+): Lógica interativa, modularizada e assíncrona.
+
+Design Responsivo (Mobile-First): Experiência de utilizador otimizada para todos os tamanhos de ecrã.
+
+Armazenamento Local (localStorage): Persistência do token de autenticação e dados do utilizador.
+
+📂 Estrutura do Projeto
 mini-twitter/
 ├── index.html
 ├── css/
-│   ├── style.css      # Estilos principais da aplicação
-│   └── reset.css      # Reset básico de CSS
+│   ├── style.css       # Estilos principais da aplicação
+│   └── reset.css       # Reset básico de CSS para padronização de navegadores
 ├── js/
-│   ├── appController.js   # Lógica principal da aplicação e controlo de UI
+│   ├── appController.js    # Lógica principal da aplicação e controlo de UI
 │   ├── repositories/
-│   │   ├── authRepository.js  # Funções para autenticação (login, registo)
-│   │   ├── userRepository.js  # Funções para gestão de perfil de utilizador
-│   │   └── postRepository.js  # Funções para gestão de postagens
+│   │   ├── authRepository.js   # Funções para autenticação (login, registo)
+│   │   ├── userRepository.js   # Funções para gestão de perfil de utilizador
+│   │   └── postRepository.js   # Funções para gestão de postagens
 │   └── views/
-│       └── view.js      # Funções utilitárias para manipulação do DOM e renderização
+│       └── view.js       # Funções utilitárias para manipulação do DOM e renderização
 └── assets/
-    └── images/        # (Opcional) Para quaisquer imagens ou outros ativos
+    └── images/         # (Opcional) Para quaisquer imagens ou outros ativos
 
---Como Executar o Projeto
-Para executar este projeto localmente, siga os passos abaixo:
--Clone o Repositório: git clone <https://github.com/vitao7/Mini-Twitter>
-cd mini-twitter
--Abra o index.html:
-Basta abrir o ficheiro index.html diretamente no seu navegador. Não é necessário um servidor web para o funcionamento básico, pois todas as operações de API são baseadas em fetch para um servidor externo.
-Alternativamente, para uma melhor experiência de desenvolvimento (especialmente com módulos ES6), pode usar uma extensão como "Live Server" no VS Code ou qualquer outro servidor web simples.
-Configure a URL da API no seu authRepository.js, userRepository.js e postRepository.js, se necessário.
+🚀 Como Executar o Projeto
+Para colocar o Mini Twitter a funcionar no seu ambiente local, siga estes passos:
 
---Equipe:
+Clone o Repositório:
+Abra o seu terminal ou prompt de comando e execute:
+
+git clone https://github.com/vitao7/Mini-Twitter
+cd Mini-Twitter
+
+Abra o index.html:
+
+Simplesmente abra o ficheiro index.html diretamente no seu navegador web preferido (Chrome, Firefox, Edge, etc.). Não é necessário um servidor web complexo, pois todas as operações de API são baseadas em fetch para um servidor externo.
+
+Dica: Para uma experiência de desenvolvimento mais fluida (especialmente com módulos ES6), pode usar uma extensão como "Live Server" no VS Code ou qualquer outro servidor web local simples.
+
+Configuração da API (Opcional):
+A URL da API já está configurada nos ficheiros authRepository.js, userRepository.js e postRepository.js. Geralmente, não é necessário alterá-la.
+
+👥 Equipe do Projeto
 Víctor Lucas de Menezes Freitas – RA: 193516
+
 Maria Eduarda Andrade Dias – RA: 194560
+
 Hiago Augusto Maioto – RA: 194281
 
---Licença
-Uso acadêmico e não comercial.
+📜 Licença
+Este projeto é disponibilizado para uso académico e não comercial.
