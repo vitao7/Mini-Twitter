@@ -83,57 +83,52 @@ Opção para atualizar o nome de utilizador e o email do perfil.
 ## 🛠️ Requisitos Técnicos
 Front-end:
 
-HTML5 Semântico: Estrutura clara e acessível do documento.
+-HTML5 Semântico: Estrutura clara e acessível do documento.
 
-CSS3: Estilização moderna e responsiva, com uso de Flexbox para layouts adaptáveis.
+-CSS3: Estilização moderna e responsiva, com uso de Flexbox para layouts adaptáveis.
 
-JavaScript Vanilla (ES6+): Lógica interativa, modularizada e assíncrona.
+-JavaScript Vanilla (ES6+): Lógica interativa, modularizada e assíncrona.
 
-Design Responsivo (Mobile-First): Experiência de utilizador otimizada para todos os tamanhos de ecrã.
+-Design Responsivo (Mobile-First): Experiência de utilizador otimizada para todos os tamanhos de ecrã.
 
-Armazenamento Local (localStorage): Persistência do token de autenticação e dados do utilizador.
+-Armazenamento Local (localStorage): Persistência do token de autenticação e dados do utilizador.
 
 ## 📂 Estrutura do Projeto
 mini-twitter/
+│
 ├── index.html
-├── css/
-│   ├── style.css       # Estilos principais da aplicação
-│   └── reset.css       # Reset básico de CSS para padronização de navegadores
-├── js/
-│   ├── appController.js    # Lógica principal da aplicação e controlo de UI
-│   ├── repositories/
-│   │   ├── authRepository.js   # Funções para autenticação (login, registo)
-│   │   ├── userRepository.js   # Funções para gestão de perfil de utilizador
-│   │   └── postRepository.js   # Funções para gestão de postagens
-│   └── views/
-│       └── view.js       # Funções utilitárias para manipulação do DOM e renderização
-└── assets/
-    └── images/         # (Opcional) Para quaisquer imagens ou outros ativos
+├── style.css
+├── appController.js # Controla a navegação, formulários e eventos principais
+├── authRepository.js # Lida com login e cadastro (requisições para API)
+├── userRepository.js # Lida com perfil do usuário
+├── postRepository.js # Lida com postagens (get, create)
+├── view.js # Lida com exibição de views e posts
+└── README.md
 
 ## 🚀 Como Executar o Projeto
 Para colocar o Mini Twitter a funcionar no seu ambiente local, siga estes passos:
 
-Clone o Repositório:
-Abra o seu terminal ou prompt de comando e execute:
+-Clone o Repositório:
+Abra o seu terminal ou prompt de comando e execute: git clone https://github.com/vitao7/Mini-Twitter
 
-git clone https://github.com/vitao7/Mini-Twitter
 cd Mini-Twitter
 
-Abra o index.html:
+-Abra o index.html:
 
 Simplesmente abra o ficheiro index.html diretamente no seu navegador web preferido (Chrome, Firefox, Edge, etc.). Não é necessário um servidor web complexo, pois todas as operações de API são baseadas em fetch para um servidor externo.
 
 Dica: Para uma experiência de desenvolvimento mais fluida (especialmente com módulos ES6), pode usar uma extensão como "Live Server" no VS Code ou qualquer outro servidor web local simples.
 
-Configuração da API (Opcional):
+-Configuração da API (Opcional):
+
 A URL da API já está configurada nos ficheiros authRepository.js, userRepository.js e postRepository.js. Geralmente, não é necessário alterá-la.
 
 ## 👥 Equipe do Projeto
-Víctor Lucas de Menezes Freitas – RA: 193516
+-Víctor Lucas de Menezes Freitas – RA: 193516
 
-Maria Eduarda Andrade Dias – RA: 194560
+-Maria Eduarda Andrade Dias – RA: 194560
 
-Hiago Augusto Maioto – RA: 194281
+-Hiago Augusto Maioto – RA: 194281
 
 ## 📜 Licença
 Este projeto é disponibilizado para uso académico e não comercial.
