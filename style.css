@@ -1,0 +1,317 @@
+/*Layout geral*/
+body {
+  display: flex;
+  flex-direction: column; /* Coloca header, main e footer em coluna */
+  min-height: 100vh; /* Garante que o body ocupe toda a altura da viewport */
+  background-color: #f0f2f5; /* Cor de fundo suave para a página */
+  color: #333; /* Cor de texto padrão */
+}
+
+header {
+  background-color: #1da1f2; /* Azul Twitter */
+  color: white;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(29, 161, 242, 0.4); /* Sombra suave */
+}
+
+.navbar {
+  max-width: 900px; /* Largura máxima para centralizar o conteúdo da navbar */
+  margin: 0 auto; /* Centraliza a navbar */
+  display: flex;
+  justify-content: space-between; /* Espaça logo e links de navegação */
+  align-items: center; /* Alinha verticalmente */
+}
+
+.logo {
+  font-weight: 700; /* Negrito */
+  font-size: 1.5rem;
+  letter-spacing: 2px; /* Espaçamento entre letras */
+}
+
+.nav-links {
+  list-style: none; /* Remove marcadores de lista */
+  display: flex; /* Para alinhar os botões lado a lado */
+  gap: 1rem; /* Espaçamento entre os botões */
+}
+
+.nav-links button {
+  background: transparent;
+  border: 2px solid white; /* Borda branca */
+  border-radius: 20px; /* Cantos arredondados */
+  padding: 0.3rem 1rem;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave no hover */
+}
+
+.nav-links button:hover,
+.nav-links button:focus {
+  background-color: white;
+  color: #1da1f2; /* Azul Twitter no hover */
+  outline: none; /* Remove o outline padrão ao focar */
+}
+
+/* === Main e Views === */
+
+main {
+  flex: 1; /* Permite que o main ocupe o espaço restante */
+  max-width: 700px; /* Largura máxima do conteúdo principal */
+  margin: 2rem auto; /* Centraliza o conteúdo principal com margem superior/inferior */
+  width: 90%; /* Ocupa 90% da largura disponível em telas menores */
+}
+
+.view {
+  display: none; /* Oculta todas as views por padrão */
+}
+
+.view.active {
+  display: block; /* Mostra a view que tem a classe 'active' */
+}
+
+/* === Formulários === */
+
+form {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 2rem;
+}
+
+form label {
+  display: block; /* Cada label em sua própria linha */
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #555;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+  width: 100%; /* Ocupa a largura total do contêiner */
+  padding: 0.6rem 0.8rem;
+  border: 1.8px solid #ccc; /* Borda sutil */
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease; /* Transição na cor da borda ao focar */
+  font-family: inherit; /* Garante que a fonte do body seja herdada */
+  resize: vertical; /* Permite redimensionamento vertical para textareas */
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form textarea:focus {
+  border-color: #1da1f2; /* Borda azul ao focar */
+  outline: none; /* Remove o outline padrão */
+}
+
+form button[type="submit"] {
+  background-color: #1da1f2;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 25px; /* Botão arredondado */
+  padding: 0.7rem 1.8rem;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer; /* Indica que é clicável */
+}
+
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+  background-color: #0d8ddb; /* Azul mais escuro no hover */
+  outline: none;
+}
+
+/* === Link buttons (text buttons) === */
+
+.link-button {
+  background: none;
+  border: none;
+  color: #1da1f2; /* Cor azul de link */
+  font-weight: 600;
+  text-decoration: underline; /* Sublinhado */
+  padding: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.link-button:hover,
+.link-button:focus {
+  color: #0d8ddb; /* Azul mais escuro no hover */
+  outline: none;
+}
+
+/* === Mensagens de erro === */
+
+.error-message {
+  color: #e0245e; /* Vermelho para erros */
+  font-weight: 600;
+  margin-top: -0.6rem; /* Ajuste de margem para alinhar melhor */
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === Feed de postagens === */
+
+#post-content {
+  font-family: inherit; /* Garante que a fonte do body seja herdada */
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between; /* Espaça contador e botão */
+  align-items: center;
+}
+
+#char-count {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Lista de posts */
+
+#posts-list,
+#my-posts-list {
+  display: flex;
+  flex-direction: column; /* Postagens empilhadas */
+  gap: 1rem; /* Espaçamento entre as postagens */
+  max-height: 400px; /* Altura máxima com scroll */
+  overflow-y: auto; /* Adiciona scroll vertical se o conteúdo for maior */
+  padding-right: 0.5rem; /* Padding para evitar que o scrollbar "corte" o conteúdo */
+}
+
+/* Estilo da postagem individual */
+
+.post {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* Para posicionar o botão de deletar */
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between; /* Espaça autor e data */
+  margin-bottom: 0.5rem;
+}
+
+.post-author {
+  font-weight: 700;
+  color: #1da1f2; /* Azul Twitter para o nome do autor */
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.post-content {
+  white-space: pre-wrap; /* Preserva quebras de linha e espaços no conteúdo */
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #e0245e; /* Vermelho para o botão de deletar */
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.post-delete-btn:hover,
+.post-delete-btn:focus {
+  color: #a2003a; /* Vermelho mais escuro no hover */
+  outline: none;
+}
+
+/* === Perfil === */
+
+#profile-info p {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+#btn-edit-profile {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#btn-edit-profile:hover,
+#btn-edit-profile:focus {
+  background-color: #0d8ddb;
+  outline: none;
+}
+
+/* Classe para ocultar o formulário de edição */
+#edit-profile-form.hidden {
+  display: none;
+}
+
+#edit-profile-form button[type="submit"] {
+  margin-right: 1rem; /* Espaçamento entre os botões Salvar e Cancelar */
+}
+
+/* Botão cancelar do editar perfil */
+#btn-cancel-edit {
+  background-color: #ccc;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#btn-cancel-edit:hover,
+#btn-cancel-edit:focus {
+  background-color: #999;
+  outline: none;
+}
+
+/* === Footer === */
+
+footer {
+  background-color: #e1e8ed; /* Cor de fundo suave para o rodapé */
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: auto; /* Empurra o rodapé para baixo, ocupando o espaço restante */
+}
+
+/* === Responsividade === */
+
+/* Media query para telas com largura mínima de 600px */
+@media (min-width: 600px) {
+  main {
+    width: 600px; /* Define largura fixa para o conteúdo principal em telas maiores */
+  }
+
+  #posts-list,
+  #my-posts-list {
+    max-height: 600px; /* Aumenta a altura máxima para as listas de posts */
+  }
+}
+
+/* Classe utilitária para ocultar elementos */
+.hidden {
+  display: none !important; /* !important para garantir que sobrescreva outros estilos */
+}

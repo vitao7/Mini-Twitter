@@ -1,0 +1,82 @@
+/*reset.css - Reset CSS Básico
+Este arquivo serve para remover ou padronizar estilos padrão
+que os navegadores aplicam, garantindo uma base consistente
+para o estilo da aplicação.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remover margens e paddings padrão de elementos comuns */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remover estilo de lista padrão */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Definir fontes padrão e herdar em elementos de formulário */
+body {
+  font-family: "Inter", sans-serif; /* Usando Inter conforme as instruções, com fallback genérico */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ajustes para imagens para que não causem overflow e sejam responsivas */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Herdar fonte e cor em inputs, textareas e botões */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Prevenir que textareas sejam redimensionáveis horizontalmente por padrão */
+textarea {
+  resize: vertical; /* Permitir apenas redimensionamento vertical */
+}
+
+/* Remover estilos padrão de botões e links para maior controle */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

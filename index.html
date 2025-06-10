@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Twitter</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1 class="logo">Mini Twitter do Diogo</h1>
+        <ul class="nav-links">
+          <!-- Botões de navegação, a visibilidade será controlada pelo JavaScript -->
+          <li><button id="btn-login-nav">Login</button></li>
+          <li><button id="btn-register-nav">Criar Conta</button></li>
+          <li><button id="btn-feed-nav" hidden>Feed</button></li>
+          <li><button id="btn-profile-nav" hidden>Perfil</button></li>
+          <li><button id="btn-logout-nav" hidden>Sair</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- === TELA LOGIN === -->
+      <!-- A classe 'active' será adicionada/removida pelo JavaScript para mostrar/esconder a view -->
+      <section id="login-view" class="view active">
+        <h2>Login</h2>
+        <form id="login-form" novalidate>
+          <label for="login-email">Email:</label>
+          <input
+            type="email"
+            id="login-email"
+            name="email"
+            required
+            autocomplete="username"
+          />
+
+          <label for="login-password">Senha:</label>
+          <input
+            type="password"
+            id="login-password"
+            name="password"
+            required
+            autocomplete="current-password"
+            minlength="6"
+          />
+
+          <button type="submit">Entrar</button>
+        </form>
+        <p>
+          Não tem conta?
+          <!-- Botão para alternar para a tela de registro -->
+          <button id="link-to-register" class="link-button">
+            Crie uma aqui
+          </button>
+        </p>
+        <!-- Div para exibir mensagens de erro do login -->
+        <div id="login-error" class="error-message"></div>
+      </section>
+
+      <!-- === TELA CADASTRO === -->
+      <section id="register-view" class="view">
+        <h2>Criar Conta</h2>
+        <form id="register-form" novalidate>
+          <label for="register-username">Nome de usuário:</label>
+          <input
+            type="text"
+            id="register-username"
+            name="username"
+            required
+            minlength="3"
+            maxlength="20"
+          />
+
+          <label for="register-email">Email:</label>
+          <input
+            type="email"
+            id="register-email"
+            name="email"
+            required
+            autocomplete="email"
+          />
+
+          <label for="register-password">Senha:</label>
+          <input
+            type="password"
+            id="register-password"
+            name="password"
+            required
+            minlength="6"
+          />
+
+          <button type="submit">Registrar</button>
+        </form>
+        <p>
+          Já tem conta?
+          <!-- Botão para alternar para a tela de login -->
+          <button id="link-to-login" class="link-button">
+            Faça login aqui
+          </button>
+        </p>
+        <!-- Div para exibir mensagens de erro do registro -->
+        <div id="register-error" class="error-message"></div>
+      </section>
+
+      <!-- === TELA FEED DE POSTAGENS === -->
+      <section id="feed-view" class="view">
+        <h2>Feed</h2>
+        <form id="post-form" novalidate>
+          <label for="post-content">Nova postagem (máx. 280 caracteres):</label>
+          <textarea
+            id="post-content"
+            name="content"
+            maxlength="280"
+            rows="3"
+            placeholder="O que está acontecendo?"
+            required
+          ></textarea>
+          <div class="post-footer">
+            <!-- Contador de caracteres para a postagem -->
+            <span id="char-count">0 / 280</span>
+            <button type="submit">Publicar</button>
+          </div>
+        </form>
+        <section id="posts-list">
+          <!-- As postagens serão carregadas dinamicamente aqui pelo JavaScript -->
+        </section>
+      </section>
+
+      <!-- === TELA PERFIL DO USUÁRIO === -->
+      <section id="profile-view" class="view">
+        <h2>Perfil</h2>
+        <div id="profile-info">
+          <p>
+            <strong>Nome de usuário:</strong>
+            <span id="profile-username"></span>
+          </p>
+          <p><strong>Email:</strong> <span id="profile-email"></span></p>
+        </div>
+
+        <!-- Botão para mostrar o formulário de edição de perfil -->
+        <button id="btn-edit-profile">Editar Perfil</button>
+
+        <!-- Formulário de edição de perfil, inicialmente oculto -->
+        <form id="edit-profile-form" class="hidden" novalidate>
+          <label for="edit-username">Nome de usuário:</label>
+          <input
+            type="text"
+            id="edit-username"
+            name="username"
+            required
+            minlength="3"
+            maxlength="20"
+          />
+
+          <label for="edit-email">Email:</label>
+          <input type="email" id="edit-email" name="email" required />
+
+          <button type="submit">Salvar</button>
+          <!-- Botão para cancelar a edição do perfil -->
+          <button type="button" id="btn-cancel-edit">Cancelar</button>
+        </form>
+
+        <h3>Minhas Postagens</h3>
+        <section id="my-posts-list">
+          <!-- As postagens do usuário logado serão carregadas dinamicamente aqui pelo JavaScript -->
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <p>Mini Twitter do Diogo</p>
+    </footer>
+
+    <!--
+      Link para o arquivo JavaScript principal.
+      'type="module"' é crucial para usar import/export (módulos ES6).
+      'defer' garante que o script seja executado após o HTML ser carregado.
+    -->
+    <script src="js/appController.js" type="module" defer></script>
+  </body>
+</html>
