@@ -45,43 +45,45 @@ Endpoints Principais (Resumo)
 1. Sistema de Utilizadores
 Criar Conta:
 
-Formulário intuitivo para registo de novos utilizadores.
+-Formulário intuitivo para registo de novos utilizadores.
 
-Campos: Nome de utilizador, email e senha.
+-Campos: Nome de utilizador, email e senha.
 
 Login:
 
-Formulário de login com email e senha.
+-Formulário de login com email e senha.
 
-Manutenção do utilizador logado após o recarregamento da página (utilizando localStorage).
+-Manutenção do utilizador logado após o recarregamento da página (utilizando localStorage).
 
 2. Feed de Postagens
+   
 Criar Postagem:
 
-Campo de texto para novas publicações com limite de 280 caracteres.
+-Campo de texto para novas publicações com limite de 280 caracteres.
 
-Botão dedicado para publicar a postagem.
+-Botão dedicado para publicar a postagem.
 
 Visualizar Postagens:
 
-Exibição de um feed completo com todas as postagens.
+-Exibição de um feed completo com todas as postagens.
 
-Cada postagem exibe o nome de utilizador do autor, o conteúdo e a data/hora da publicação.
+-Cada postagem exibe o nome de utilizador do autor, o conteúdo e a data/hora da publicação.
 
-As postagens são ordenadas cronologicamente, com as mais recentes a aparecerem primeiro.
+-As postagens são ordenadas cronologicamente, com as mais recentes a aparecerem primeiro.
 
 3. Perfil do Utilizador
+
 Visualizar Perfil:
 
-Exibe informações básicas do utilizador (nome de utilizador, email).
+-Exibe informações básicas do utilizador (nome de utilizador, email).
 
 Minhas Postagens:
 
-Lista dedicada a todas as postagens criadas pelo utilizador logado.
+-Lista dedicada a todas as postagens criadas pelo utilizador logado.
 
 Editar Perfil:
 
-Opção para atualizar o nome de utilizador e o email do perfil.
+-Opção para atualizar o nome de utilizador e o email do perfil.
 
 ## 🛠️ Requisitos Técnicos
 Front-end:
@@ -135,11 +137,11 @@ Dica: Para uma experiência de desenvolvimento mais fluida (especialmente com m�
 A URL da API já está configurada nos ficheiros authRepository.js, userRepository.js e postRepository.js. Geralmente, não é necessário alterá-la.
 
 ## 👥 Equipe do Projeto
--Víctor Lucas de Menezes Freitas – RA: 193516
+Víctor Lucas de Menezes Freitas – RA: 193516
 
--Maria Eduarda Andrade Dias – RA: 194560
+Maria Eduarda Andrade Dias – RA: 194560
 
--Hiago Augusto Maioto – RA: 194281
+Hiago Augusto Maioto – RA: 194281
 
 ## 📜 Licença
 Este projeto é disponibilizado para uso académico e não comercial.
