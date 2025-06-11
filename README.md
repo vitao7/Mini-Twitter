@@ -1,5 +1,5 @@
 # Mini Twitter - Projeto de Desenvolvimento Web
-## 🚀 Descrição do Projeto
+## Descrição do Projeto
 Este projeto implementa uma versão simplificada do Twitter, desenvolvida exclusivamente com HTML, CSS e JavaScript vanilla. O principal objetivo é criar uma aplicação front-end funcional que permita aos utilizadores interagir através de postagens curtas, replicando a essência da popular rede social.
 
 O Mini Twitter oferece as funcionalidades essenciais para:
@@ -12,7 +12,7 @@ O Mini Twitter oferece as funcionalidades essenciais para:
 
 -A aplicação interage com uma API externa para persistir e recuperar os dados, garantindo uma experiência dinâmica e em tempo real.
 
-## 🔗 API do Projeto
+## API do Projeto
 A aplicação estabelece comunicação com a seguinte API RESTful:
 https://mini-twitter-api-vy9q.onrender.com/
 
@@ -41,7 +41,7 @@ Endpoints Principais (Resumo)
 
 -Atenção: Para aceder a endpoints protegidos, é necessário incluir o token JWT no cabeçalho da requisição: Authorization: Bearer <seu_token_jwt>.
 
-## ✨ Funcionalidades Implementadas
+## Funcionalidades Implementadas
 1. Sistema de Utilizadores
 
 Criar Conta:
@@ -86,7 +86,7 @@ Editar Perfil:
 
 -Opção para atualizar o nome de utilizador e o email do perfil.
 
-## 🛠️ Requisitos Técnicos
+## Requisitos Técnicos
 Front-end:
 
 -HTML5 Semântico: Estrutura clara e acessível do documento.
@@ -99,7 +99,7 @@ Front-end:
 
 -Armazenamento Local (localStorage): Persistência do token de autenticação e dados do utilizador.
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 mini-twitter/
 
 │
@@ -119,7 +119,7 @@ mini-twitter/
 
 └── README.md
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 Para colocar o Mini Twitter a funcionar no seu ambiente local, siga estes passos:
 
 -Clone o Repositório:
@@ -137,12 +137,12 @@ Dica: Para uma experiência de desenvolvimento mais fluida (especialmente com m�
 
 A URL da API já está configurada nos ficheiros authRepository.js, userRepository.js e postRepository.js. Geralmente, não é necessário alterá-la.
 
-## 👥 Equipe do Projeto
+## Equipe do Projeto
 Víctor Lucas de Menezes Freitas – RA: 193516
 
 Maria Eduarda Andrade Dias – RA: 194560
 
 Hiago Augusto Maioto – RA: 194281
 
-## 📜 Licença
-Este projeto é disponibilizado para uso académico e não comercial.
+## Licença
+Este projeto é disponibilizado para uso acadêmico e não comercial.
